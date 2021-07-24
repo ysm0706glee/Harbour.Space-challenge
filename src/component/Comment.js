@@ -1,16 +1,94 @@
+import { Carousel, Container, Row, Col } from "react-bootstrap";
+
 function Comment() {
   return (
     <>
-      <h1>Irene Pereyra</h1>
-      <h1>Interaction Design Fellow '19</h1>
-      <h1>in</h1>
-      <button>Drag</button>
-      <p>This Fellowship was a turning point in my career.</p>
-      <p>
-        I wouldn't be where I am today without the financial support and
-        experienced offered through the program.
-      </p>
-      <h1>Education ・ B.A. Visual Design</h1>
+      <Carousel className="my-5" variant="dark">
+        <Carousel.Item>
+          <Container className="border">
+            <Row>
+              <Col>
+                {" "}
+                <div>
+                  <strong>Irene Pereyra</strong>
+                </div>
+              </Col>
+            </Row>
+            <Row>
+              <Col>
+                <div className="mb-3">Interaction Design Fellow '19</div>
+                <div>
+                  <p>
+                    This Fellowship was a turning point in my career.<br></br> I
+                    wouldn't be where I am today without the financial support
+                    and experienced offered through the program.
+                  </p>
+                  <div>Education ・ B.A. Visual Design</div>
+                </div>
+              </Col>
+              <Col>
+                <div>in</div>
+              </Col>
+            </Row>
+          </Container>
+        </Carousel.Item>
+        <Carousel.Item>
+          <Container className="border">
+            <Row>
+              <Col>
+                {" "}
+                <div>
+                  <strong>Irene Pereyra</strong>
+                </div>
+              </Col>
+            </Row>
+            <Row>
+              <Col>
+                <div className="mb-3">Interaction Design Fellow '19</div>
+                <div>
+                  <p>
+                    This Fellowship was a turning point in my career.<br></br> I
+                    wouldn't be where I am today without the financial support
+                    and experienced offered through the program.
+                  </p>
+                  <div>Education ・ B.A. Visual Design</div>
+                </div>
+              </Col>
+              <Col>
+                <div>in</div>
+              </Col>
+            </Row>
+          </Container>
+        </Carousel.Item>
+        <Carousel.Item>
+          <Container className="border">
+            <Row>
+              <Col>
+                {" "}
+                <div>
+                  <strong>Irene Pereyra</strong>
+                </div>
+              </Col>
+            </Row>
+            <Row>
+              <Col>
+                <div className="mb-3">Interaction Design Fellow '19</div>
+                <div>
+                  <p>
+                    This Fellowship was a turning point in my career.<br></br> I
+                    wouldn't be where I am today without the financial support
+                    and experienced offered through the program.
+                  </p>
+                  <div>Education ・ B.A. Visual Design</div>
+                </div>
+              </Col>
+              <Col>
+                <div>in</div>
+              </Col>
+            </Row>
+          </Container>
+        </Carousel.Item>
+      </Carousel>
     </>
   );
 }

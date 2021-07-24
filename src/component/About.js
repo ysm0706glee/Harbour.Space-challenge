@@ -1,24 +1,58 @@
+import { Container, Row, Col } from "react-bootstrap";
+
 function About({ data }) {
   return (
     <>
-      <h1>About the apprenticeship</h1>
       {Object.keys(data).length ? (
         <>
-          <h2>{data.scholarship.about[0].data}</h2>
-          <h2>Scholarship value</h2>
-          <h2>{data.scholarship.total_value}</h2>
-          <h2>Tuition covered</h2>
-          <h2>{data.scholarship.tuition}</h2>
-          <h2>Remaining</h2>
-          <h2>{data.scholarship.remaining}</h2>
-          <h2>Living stipend</h2>
-          <h2>{data.scholarship.stipend_per_month}</h2>
-          <h2>Study commitment</h2>
-          <h2>{data.scholarship.study_commitment}</h2>
-          <h2>{data.scholarship.study_commitment_text}</h2>
-          <h2>Work commitment</h2>
-          <h2>{data.scholarship.internship_commitment}</h2>
-          <h2>{data.scholarship.internship_commitment_text}</h2>
+          <Container className="mt-5">
+            <Row>
+              <Col>
+                <img
+                  className="personImg"
+                  src={data.scholarship.program.photos[0].src}
+                  width="200"
+                  height="200"
+                  alt="person"
+                ></img>
+              </Col>
+              <Col>
+                <h1 className="subTitle">About the apprenticeship</h1>{" "}
+                <p className="mb-5">{data.scholarship.about[0].data}</p>
+              </Col>
+            </Row>
+            <Row>
+              <Col className="border mx-5">
+                <div className="subTitle mb-5">Scholarship value</div>
+                <div className="mb-5">
+                  €{data.scholarship.total_value.toLocaleString()}
+                </div>
+                <div className="subTitle">Tuition covered</div>
+                <div>€{data.scholarship.tuition.toLocaleString()}</div>
+                <div className="subTitle">Remaining</div>
+                <div>€{data.scholarship.remaining.toLocaleString()}</div>
+                <div className="subTitle">Living stipend</div>
+                <div>
+                  €{data.scholarship.stipend_per_month.toLocaleString()}
+                </div>
+              </Col>
+              <Col className="border mx-5">
+                <div className="subTitle mb-1">Study commitment</div>
+                <div className="mb-3">
+                  {data.scholarship.study_commitment} hours / day
+                </div>
+                <div>{data.scholarship.study_commitment_text}</div>
+              </Col>
+              <Col className="border mx-5">
+                <div className="subTitle mb-1">Work commitment</div>
+                <div className="mb-3">
+                  {data.scholarship.internship_commitment} hours / day
+                </div>
+                <div>{data.scholarship.internship_commitment_text}</div>
+              </Col>
+              <Col></Col>
+            </Row>
+          </Container>
         </>
       ) : (
         ""

@@ -1,3 +1,5 @@
+import { Container, Row, Col } from "react-bootstrap";
+
 import Main from "./Main";
 import Information from "./Information";
 
@@ -6,9 +8,17 @@ function Title({ data }) {
     <>
       {Object.keys(data).length ? (
         <>
-          <h1>{data.scholarship.name}</h1>
-          <Main data={data} />
-          <Information data={data} />
+          <h1 className="my-5 title">{data.scholarship.name}</h1>
+          <Container>
+            <Row>
+              <Col>
+                <Main data={data} />
+              </Col>
+              <Col>
+                <Information data={data} />
+              </Col>
+            </Row>
+          </Container>
         </>
       ) : (
         <></>

@@ -1,8 +1,14 @@
+import React, { useState } from "react";
+import { Container, Row, Col } from "react-bootstrap";
+
 function Questions({ data }) {
+  const [cliked, setClicked] = useState(false);
+  const [selectedCategorie, setSelectedCategorie] = useState("");
+
   const categories = () => {
     return data.scholarship.faqs.categories.map((categorie, i) => {
       return (
-        <option value="categorie" key={i}>
+        <option value={categorie} key={i}>
           {categorie}
         </option>
       );
@@ -10,14 +16,66 @@ function Questions({ data }) {
   };
 
   const items = () => {
-    return data.scholarship.faqs.items.sort().map((item, i) => {
+    // return data.scholarship.faqs.items.sort().map((item) => {
+    //   return (
+    //     <>
+    //       <dt className="subTitle mt-3">{item.type}</dt>
+    //       <dt className="mb-3">{item.question}</dt>
+    //       <button
+    //         className="detailButton"
+    //         onClick={() => (cliked ? setClicked(false) : setClicked(true))}
+    //       >
+    //         {cliked ? "+" : "-"}
+    //       </button>
+    //       {cliked === true ? (
+    //         item.answer.map((answer) => <dd>{answer.data}</dd>)
+    //       ) : (
+    //         <></>
+    //       )}
+    //     </>
+    //   );
+    // });
+    if (selectedCategorie !== "") {
+      return data.scholarship.faqs.items
+        .filter((item) => item.type === selectedCategorie)
+        .sort()
+        .map((item) => {
+          return (
+            <>
+              <dt className="subTitle mt-3">{item.type}</dt>
+              <dt className="mb-3">{item.question}</dt>
+              <button
+                className="detailButton"
+                onClick={() => (cliked ? setClicked(false) : setClicked(true))}
+              >
+                {cliked ? "+" : "-"}
+              </button>
+              {cliked === true ? (
+                item.answer.map((answer) => <dd>{answer.data}</dd>)
+              ) : (
+                <></>
+              )}
+            </>
+          );
+        });
+    }
+
+    return data.scholarship.faqs.items.sort().map((item) => {
       return (
         <>
-          <dt>{item.type}</dt>
-          <dt>{item.question}</dt>
-          {item.answer.map((answer) => (
-            <dd>{answer.data}</dd>
-          ))}
+          <dt className="subTitle mt-3">{item.type}</dt>
+          <dt className="mb-3">{item.question}</dt>
+          <button
+            className="detailButton"
+            onClick={() => (cliked ? setClicked(false) : setClicked(true))}
+          >
+            {cliked ? "+" : "-"}
+          </button>
+          {cliked === true ? (
+            item.answer.map((answer) => <dd>{answer.data}</dd>)
+          ) : (
+            <></>
+          )}
         </>
       );
     });
@@ -27,10 +85,32 @@ function Questions({ data }) {
     <>
       {Object.keys(data).length ? (
         <>
-          <h1>Frequently asked questions</h1>
-          <label htmlFor="categories">Filter by:</label>
-          <select id="categories">{categories()}</select>
-          <dl>{items()}</dl>
+          <Container>
+            <Row>
+              <Col>
+                <h1 className="subTitle">
+                  Frequently asked<br></br> questions
+                </h1>
+              </Col>
+              <Col>
+                <label htmlFor="categories">Filter by: </label>
+                <select
+                  className="mb-5"
+                  id="categories"
+                  onChange={(e) => {
+                    setSelectedCategorie(e.target.value);
+                  }}
+                >
+                  {categories()}
+                </select>
+              </Col>
+              <Row>
+                <Col>
+                  <dl>{items()}</dl>
+                </Col>
+              </Row>
+            </Row>
+          </Container>
         </>
       ) : (
         <></>

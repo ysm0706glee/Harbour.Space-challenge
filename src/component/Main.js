@@ -1,9 +1,8 @@
 function Main({ data }) {
-  console.log(data);
   return (
     <>
-      <h3>{data.scholarship.description[0].data}</h3>
-      <button>Apply Now</button>
+      <p>{data.scholarship.description[0].data}</p>
+      <button className="ApplyNowButton2">Apply Now</button>
     </>
   );
 }
