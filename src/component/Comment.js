@@ -3,7 +3,7 @@ import { Carousel, Container, Row, Col } from "react-bootstrap";
 function Comment() {
   return (
     <>
-      <Carousel className="my-5 col-md-4" variant="dark">
+      <Carousel className="mx-auto my-5 col-md-10" variant="dark">
         <Carousel.Item>
           <Container className="border">
             <Row>

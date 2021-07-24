@@ -29,7 +29,7 @@ function Questions({ data }) {
                 className="detailButton"
                 onClick={() => (cliked ? setClicked(false) : setClicked(true))}
               >
-                {cliked ? "+" : "-"}
+                {cliked ? "-" : "+"}
               </button>
               {cliked === true ? (
                 item.answer.map((answer) => <dd>{answer.data}</dd>)
@@ -43,15 +43,16 @@ function Questions({ data }) {
 
     return data.scholarship.faqs.items.sort().map((item) => {
       return (
-        <div className="col-md-4">
+        <div>
           <dt className="subTitle mt-3">{item.type}</dt>
           <dt className="mb-3">{item.question}</dt>
           <button
             className="detailButton"
             onClick={() => (cliked ? setClicked(false) : setClicked(true))}
           >
-            {cliked ? "+" : "-"}
+            {cliked ? "-" : "+"}
           </button>
+
           {cliked === true ? (
             item.answer.map((answer) => <dd>{answer.data}</dd>)
           ) : (

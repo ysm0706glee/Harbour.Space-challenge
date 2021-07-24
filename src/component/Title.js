@@ -7,11 +7,11 @@ function Title({ data }) {
   return (
     <>
       {Object.keys(data).length ? (
-        <div className="col-md-4">
+        <div>
           <h1 className="my-5 title">{data.scholarship.name}</h1>
           <Container>
             <Row>
-              <Col>
+              <Col className="col-md-12 mb-5">
                 <Main data={data} />
               </Col>
               <Col>
