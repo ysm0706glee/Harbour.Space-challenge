@@ -52,7 +52,6 @@ function Questions({ data }) {
           >
             {cliked ? "-" : "+"}
           </button>
-
           {cliked === true ? (
             item.answer.map((answer) => <dd>{answer.data}</dd>)
           ) : (
@@ -77,7 +76,7 @@ function Questions({ data }) {
               <Col>
                 <label htmlFor="categories">Filter by: </label>
                 <select
-                  className="mb-5"
+                  className="mb-5 filter py-2"
                   id="categories"
                   onChange={(e) => {
                     setSelectedCategorie(e.target.value);

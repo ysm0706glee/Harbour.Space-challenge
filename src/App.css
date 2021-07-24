@@ -65,9 +65,12 @@
 .detailButton {
   background-color: rgb(82, 57, 150);
   color: white;
-  border-radius: 50%;
   width: 30px;
   height: 30px;
+}
+
+.filter {
+  border-radius: 10%;
 }
 
 .BottomStickyBar {

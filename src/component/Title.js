@@ -11,7 +11,7 @@ function Title({ data }) {
           <h1 className="my-5 title">{data.scholarship.name}</h1>
           <Container>
             <Row>
-              <Col className="col-md-12 mb-5">
+              <Col className="col-md-7 mb-5">
                 <Main data={data} />
               </Col>
               <Col>
