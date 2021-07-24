@@ -6,7 +6,7 @@ function BottomStickyBar({ data }) {
     <div className="BottomStickyBar">
       {Object.keys(data).length ? (
         <>
-          <Container>
+          <Container className="col-md-4">
             <Row>
               <Col>
                 <strong>Location</strong>

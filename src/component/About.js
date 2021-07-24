@@ -5,7 +5,7 @@ function About({ data }) {
     <>
       {Object.keys(data).length ? (
         <>
-          <Container className="mt-5">
+          <Container className="mt-5 col-md-4">
             <Row>
               <Col>
                 <img

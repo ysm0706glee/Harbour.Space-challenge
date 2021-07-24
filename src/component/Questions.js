@@ -16,25 +16,6 @@ function Questions({ data }) {
   };
 
   const items = () => {
-    // return data.scholarship.faqs.items.sort().map((item) => {
-    //   return (
-    //     <>
-    //       <dt className="subTitle mt-3">{item.type}</dt>
-    //       <dt className="mb-3">{item.question}</dt>
-    //       <button
-    //         className="detailButton"
-    //         onClick={() => (cliked ? setClicked(false) : setClicked(true))}
-    //       >
-    //         {cliked ? "+" : "-"}
-    //       </button>
-    //       {cliked === true ? (
-    //         item.answer.map((answer) => <dd>{answer.data}</dd>)
-    //       ) : (
-    //         <></>
-    //       )}
-    //     </>
-    //   );
-    // });
     if (selectedCategorie !== "") {
       return data.scholarship.faqs.items
         .filter((item) => item.type === selectedCategorie)
@@ -62,7 +43,7 @@ function Questions({ data }) {
 
     return data.scholarship.faqs.items.sort().map((item) => {
       return (
-        <>
+        <div className="col-md-4">
           <dt className="subTitle mt-3">{item.type}</dt>
           <dt className="mb-3">{item.question}</dt>
           <button
@@ -76,7 +57,7 @@ function Questions({ data }) {
           ) : (
             <></>
           )}
-        </>
+        </div>
       );
     });
   };

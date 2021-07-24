@@ -1,6 +1,6 @@
 function Header() {
   return (
-    <div className="header">
+    <div className="header col-md-4">
       <h1>HARBOUR SPACE /INTERACTION DESIGN</h1>
       <button className="applyNowButton">APPLY NOW</button>
       <div>
